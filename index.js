@@ -25,8 +25,9 @@ updateRate();
 
 bot.on('message', (e) => {
   if (e.message.type !== 'text') return;
-
-  if (e.message.text === '共通課程') {
+  if (e.message.text === '測試' || e.message.text === 'test') {
+    e.reply(e.message.text);
+  } else if (e.message.text === '共通課程') {
     getCourse(e);
   } else if (e.message.text.startsWith('查動畫 ')) {
     getAnime(e);

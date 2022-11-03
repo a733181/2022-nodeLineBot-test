@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = (json, fileName) => {
-  if (process.env.WRITEJSON) return;
+  if (process.env.WRITEJSON === 'N') return;
   const exists = fs.existsSync('./debugtext');
   if (!exists) {
     fs.mkdirSync('./debugtext');
